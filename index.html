@@ -1,0 +1,50 @@
+<script>
+    //ENTRADA
+
+    const nome = prompt(`Informe seu nome completo:`);
+    const cpf = Number(prompt(`Informe seu número de CPF:`));
+    const salario = Number(prompt(`Informe seu salário bruto: R$`));
+    const codigo = prompt(`Informe seu código de cargo:`);
+
+    //PROCESSAMENTO
+
+    if(salario < 1412){
+        previdencia = 0;
+    }
+    else{
+        previdencia = salario * 12.5/100;
+    }
+
+    if(codigo == "abc123"){
+        sindicato = salario * 7.5/100;
+        aumento = salario * 8/100;
+    }
+    else if(codigo == "123abc"){
+        sindicato = salario * 6.5/100;
+        aumento = salario * 7.5/100;
+    }
+    else if(codigo == "xyz999"){
+        sindicato = salario * 5/100;
+        aumento = salario * 9/100;
+    }
+    else if(codigo == "9a8b7c"){
+        sindicato = salario * 4.5/100;
+        aumento = salario * 5/100;
+    }
+    else if(codigo == "log456"){
+        sindicato = salario * 3/100;
+        aumento = salario * 6/100;
+    }
+    else{
+        sindicato = 50;
+        aumento = 200;
+    }
+    const salarioFinal = salario + aumento - sindicato - previdencia;
+
+    //SAÌDA
+
+    document.write(`Seu nome é: ${nome} e seu CPF é: ${cpf}.<br>`);
+    document.write(`Contribuição sindical: ${sindicato}.<br>`);
+    document.write(`Previdência social: ${previdencia}.<br>`);
+    document.write(`Salário Final: ${salarioFinal}.`)
+</script>
